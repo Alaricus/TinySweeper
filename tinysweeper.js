@@ -60,7 +60,8 @@ const getWarningNumber = (row, col) => getValidNeighbors(row, col).reduce((acc, 
   });
 };
 
-const haveWon = () => brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 11 ? ++aZ : aZ, 0), 0) === 10;
+const haveWon = () => brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 11 ? ++aZ : aZ, 0), 0) === 10
+&& brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 10 ? ++aZ : aZ, 0), 0) === 0;
 
 const placeMines = (r, c) => {
   let minesPlaced = 0;
