@@ -60,14 +60,14 @@ const getWarningNumber = (row, col) => getValidNeighbors(row, col).reduce((acc, 
   });
 };
 
-const haveWon = () => brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 11 ? ++aZ : aZ, 0), 0) === 10
-&& brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 10 ? ++aZ : aZ, 0), 0) === 0;
+const haveWon = () => brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 11 ? ++aZ : aZ, 0), 0) === 15
+  && brd.reduce((acc, cur) => acc += cur.reduce((aZ, cZ) => cZ === 10 ? ++aZ : aZ, 0), 0) === 0;
 
 const placeMines = (r, c) => {
   let minesPlaced = 0;
   const clickArea = getValidNeighbors(r, c);
   clickArea.push({ row: parseInt(r, 10), col: parseInt(c, 10) });
-  while (minesPlaced < 10) {
+  while (minesPlaced < 15) {
     const row = Math.floor(Math.random() * 10), col = Math.floor(Math.random() * 10);
     if (!clickArea.some(spot => spot.row === row && spot.col === col) && brd[row][col] !== 9) {
       brd[row][col] = 9; minesPlaced += 1;
