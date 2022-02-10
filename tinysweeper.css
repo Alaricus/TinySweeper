@@ -1,4 +1,20 @@
 body {
   margin-top: 50px;
   text-align: center;
+  font-family: sans-serif;
+}
+
+a {
+  font-size: 0.8rem;
+  position: fixed;
+  right: -67px;
+  top: 40px;
+  width: 15rem;
+  padding: 0.25rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  background-color: #ffd007;
+  transform: rotate(45deg);
 }
